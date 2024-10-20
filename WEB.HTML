@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <STYLE>
+        @charset "utf-8";
+
+body{
+    background-color:rgba(0,0,0,0.7);
+    display: grid;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.logo{
+    border-radius:100px;
+    margin-bottom:5px;
+}
+
+.con{
+text-align: center;
+}
+.developer{
+    color: rgb(137, 229, 241);
+    font-size: 50px;
+    margin-top:10px;
+}
+.searchbar{
+    width:746px;
+    height: 48px;
+    padding-right: 0px;
+    padding-left: 20px;
+    border-radius: 100px;
+    font-size: 20px;
+    margin-top:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(253, 253, 253,0.7);
+    box-shadow: 0px 0px 8px rgb(219, 219, 219);
+}
+
+.searchbar:hover{
+    box-shadow: 0px 0px 20px rgb(245, 245, 245);
+}
+
+#search_box{
+    width:690px;
+    height: 48px;
+    border: 0px;
+    background-color: rgba(253, 253, 253,0);
+    opacity: 0.5;
+    outline: none;
+    font-size: 20px;
+
+}
+
+#search_box::placeholder{
+    color: rgba(0, 0, 0, 0.897);
+}
+
+#search_btn{
+    outline: none;
+    padding: 0px;
+    border-radius: 50%;
+    border: 0px;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+
+#search_btn:hover{
+    background-color: rgba(252, 252, 252, 0.39);
+    box-shadow: 0px 0px 8px rgba(252, 252, 252, 0.877);
+}
+
+#search_btn{
+    padding-top: 3px;
+    background-color: rgba(252, 252, 252, 0.555);
+}
+.search_button{
+    opacity: 0.7;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+
+.shortcut_container{
+    display: flex;
+    justify-content: center;
+}
+
+.add{
+    height:100px;
+    width:100px;
+    margin-top: 20px;
+    align-items: center;
+    display:flex;
+    flex-direction:column;
+    cursor: pointer;
+}
+
+.shortcut{
+    margin-top: 20px;
+    font-weight: bolder;
+    color: white;
+    font-size: 40px;
+    height:50px;
+    width:50px;
+    border-radius: 50%;
+    background-color: rgba(211, 227, 253, 0.116);
+    justify-content:center;
+    display:flex;
+    align-items: center;
+    box-shadow:0px 0px 8px rgba(211, 227, 253, 0.432);
+}
+
+.shortcut:hover{
+    box-shadow:0px 0px 20px rgba(211, 227, 253, 0.521);
+}
+
+#all_shortcut_icons{
+    width: 100%;
+    height: 100px; /* All icons size be 100px X 100px*/
+    display: flex;
+    justify-content: center;
+}
+
+#bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+#add_link_box{
+    border-radius: 20px;
+    position: absolute;
+    width: 400px;
+    height: auto;
+    top: 10px;
+    display: none;
+    margin: 10px auto;
+    background-color: white;
+    padding: 30px;
+    box-sizing: border-box;
+}
+#add_link_box h1{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#add_link_box form{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#name, #url{
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 25px;
+    outline: none;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#add_btn{
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 100px;
+    cursor: pointer;
+    padding: 6px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    font-weight: 600;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.shortcutName{
+    margin: 10px;
+    width: 105px;
+    height: 95px;
+    border-radius: 50%;
+    display: grid;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+    box-shadow: 0px 2px 10px rgb(218, 218, 218);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.shortcutName:hover{
+    box-shadow: 0px 2px 20px rgb(255, 255, 255);
+}
+
+.shortcutValue{
+    font-size: 20px;
+}
+.shortcutFirstval{
+    text-transform: uppercase;
+}
+
+@media (max-width:899px){
+    .searchbar{
+        width: 500px;
+    }
+    #search_box{
+    width:450px;
+    }
+    #search_btn{
+    width: 35px;
+    }
+
+    .shortcutName{
+        width: 80px;
+        height: 70px;
+        font-size: 30px;
+    }
+    
+    .shortcutValue{
+        font-size: 15px;
+    }
+}
+
+@media (max-width:604px){
+    .searchbar{
+        width: 280px;
+    }
+    #search_btn{
+    width: 35px;
+    }
+    #search_box{
+    width:230px;
+    }
+    .developer{
+    font-size: 30px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+    #add_link_box{
+        width: 250px;
+        height: 280px;
+    }
+    #add_shortcut{
+        font-size: 20px;
+    }
+    #add_btn{
+        margin-left: 20%;
+    }
+    
+    .shortcutName{
+        width: 55px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .shortcutValue{
+        font-size: 10px;
+    }
+}
+    </STYLE>
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/fife/ALs6j_GFxo2_F73IJb78ZNPVVinxzgatwFCNEKAx4utu5pMsP3MUxyXn6NZlW9qosqNEYZICDD-ZISNnSuCLl6PclOJMxouagItWUPRojX0tK1v60y-Ia54iruxMPMg2KQ_W1yRNWpbCkGA4wBCtj9PZ6GwPZ3YRC0lHPrNRtQ7_8LbsptHiH8IFAtcyZ2d9s9pV6o5tKQvlBlccbdyWft3Wo176TN0msHSkqeSFyYafL2BUmj1ehvjrh3FgNO6Z3VUchMuy-dZqZA5NrL4P0tZzTPPQeqsJBx6TnsV9wRKcdSl8Spq8Xxz118H-j7ao-jGjgyxlm9dgU86SUcVegw0tGQof_fnRDx5EzROYWwGguhh67Vm8EV8qEZTRwIGNhYPbfcGkwTeoFqxWi-dL3tXj59DoM0y2oiQzZCpQyxIZfv1mB6A7g_KfosgIniEnqw1JMUVdj6XkWPGbiyLbN0Mil5wbNXOCiBnY54LerDM_gSuoGXrM2kvFXCmTrGvfNkQyLC21IOhBVF6l7XFr4TZCtOxSkcGVOQRbbqInuXik24qXvyRz45w-nmncVavS5TxOvM5sjww8K77PzQ5UWL70LiPotphr986kSQ9Zhw69cOt0HRTJtotTBhFJ36aC4q1B3Aunrb6eBudWhUJ_DY9ffqvl8JoCM0qvH9unpP0Q-k_OM2FLe1HsFbdMCLm-fmAr_H3jiXTnrDlK6XQiDSQZy3X7I27FNqBP5mr5kaYv4-mppnNxV5InCen_qgSGV0E7eV3OxlM4OKAuGOQACTZJMx-3BO6HMGVhty_Y2BbagVCVzHrir7_9wycR0N9kCoXOAfs6wnPeHpoDEouCCho8R31yv7oWCxWaNIfelSqDJxwWL7VxgzagkDXRdSpxkJc5MoHLDCjaP6ZWAbwDKT0Ozoa8HdSJ1Cs7boaK3ORm4rhj4PWYw2KrmbyvYuyy9TVoLvEgOwFcjmgPSLQiJkwY0KhKQndTfnztbhF60PwhnyLrNV5Izn1Hek7MlYbbavjAd-MR4nwaiJxoW-pWY-rZ0io2hcRl77QsLVTj9vTBuS_nf02tHl9A1JmULY5Znfna78lnvpcw0FkFkWHELvAaZiGkXZISZPQpFhcIpzkbVkW7GLV10GWBvBerJDTdlGyhIBKvSndK0AnKfYVYJpXnepMhP7n4oIaSffC6rXNOQ0ZOA-Ex1QPyYOsaJAAn_JhN5Yp59Dl12-d8QbuMJJyJrZVgE_W07OBEK_a2cpsHcf4UJ8cUa277ax1b1Vemh70sCdE7tyM2A6X7Pb2SFEOhmov56ZkmHWOlozGwZ11x49o-MxEzvyoWR6F0yUlGpc4IBV2bpXn7KhCgknjEpPpZs4t7yfsSWa4Ko3qrDgyF5kk9gH7dswIbO4k5T-QIfJFHXg2dQ1dGOmll5-Joq-SHyIE8rZLlpyayeKom9qVUKFJ7gxnKF2PVc73cIM3VYC7vH15KorEfQ0jsmyb3tH3hSkKaOeaEYK3nrd17oHEAfkaz9Egc7i2Oc2PmTG2aMg54xHXOC2_53-7n97u6S9bTtjtOPVXuv2PD9sO5cHCelV8YlmPCK6Ipfi8rOaLZy74nONo_jkzLTlP2iNMIKlm6mQ=w1097-h813" type="image/x-icon" >
+</head>
+<body>
+    <div class="con" >
+    <img src="https://lh3.googleusercontent.com/fife/ALs6j_EpyL4TZz5Ci7qFjOKGhYRr3pz5JxNZ9yJkcMz0RFSXwu0CbLC0knvNGibvLIupkEOXWI0W3UG-IyP3HC2GPy53RABBiUi_4XDXqwakRnz7ZerBTVTPeuE-AXHv83nYkJpBQ1gDrBQDJfQLoU9w1goKSttZZ5lXJ3Ppg6uUMfYWJUMyE0T1D3FOFLyjXwWQQPgvWfe3FRStBejmQH4k7i5Ew_NRyYIBr__-CflZkkc1lUCvO_dYKHv5KP8-xHk8NW_fFDMQNF3FDXCYjuIpJL9fNTuiwoa8itdISnzK_Srs-4rtIo0QBs8cgxScbMM1cJKlGEk4DX-1a4DwfPQq-660FeWHWNNFRjOC1JnAkOsvFaMYOvgRn2em2PRhFWESyjYN0JOadOiqTi0qEBfuNgoD0WeaWOk9rzn05D4Y647raFU3MvajDth3gT2uGNHp9a74pP9kVoVVMHvK-PBKy74d7CYaVDic1aEOy79C1L7MchKsNG9uCly2vmLT1viTrUqz2ElwqWWe1fRh0j24WYVqHv_e9rYF-J5CAx879z0Ui1UmRlDEFVP2QYUjls7lEaj0aDjctz1MeiF_NscgEa_2GoVVPfeWd6k5_0eJGuX9QBMA2inVTF8PvZpdxPhhFk295M6chC9O2mwEddAmU0p1kAZF2hkC826e9fg1sq23WnlhDUBzUDfYZ3mdI8__gir6vVT1_KjQ5_iA75scVAuLysPPtPjm6nl7SpFILtAu8Ls5FfKlg8Z3IJ5pyRHyKYzIQxHpGEWPRprAOkwgAklhghHfQfwBoTRZR2VpqLLEn_Ee0HG0Dj7pcP0A05yNlcOv4JfAaKr7b_bzRkRczp2ACErHgVDylXidXoN2mW1OQ7H3c43pFBGS1dA5TKEeDDaj69C3_y6osNgpHm6E4_49hpOhJCzhNOhmZsjdcH2rsr6UzodL-DtlsXOnZPJsJ9iW9bjTkPXdpoh3NCa5_WUgGVO0PblJXlxIRe3fhxhSzhyQl0W82oq1f5ChLKMG1FqGQnrgU3tCkV7mjB_BeFo798m8Ju5O7LV8kEzjRmnSvSmuvsLeM7rFZcC57CwdEirPgjL4uGKlerlln6JBFhNkbzP8qKl-SVOOKcwTnVH0exbBg4dVHjJIYvvrN4_maWn3KLRkSz9rGXKSMfEJXwQY2EF7BQOWrzsJSj5aMPlNh4iubYQe39yfoEM9XqPyUNYreJOWZoIlYHr8w1wZqiBv1JukRVQ28C5QPa94zxyZx4MW2ZOxOTrBdNA74rJJdhSDXk82gBy3vqpQErEZPDMiFowVRNbqzfWAjgj5VLjxVlrpm7Wzc0RalkeR_32UdLgIu7-VaDL0kS5XxylOJJ1583UNAD2K5iMVMojrqbU9DXn4L5sIQcnk68Brb8wGQxdBpLJ_DFs1AcRyuW64Bem7wSHk_qKNh1yn-gQy41xRM6j1aa9LZd0cUznM-hp7-OxQgDztm8xW8-mPz_2ieL5Rh1woTsCPgGGwIA0nI9efRDOhOb8MbKcqHqCERVE-7P-Qf4Dg6PuPZhsjW9eeDyo7jNJpKH4Hoxice-w_kPZxLI2_O_3NzKf1dekGzOX7mRopaeRz7-NkHwpgPzf0Ew=w1097-h813" class="logo">
+    <br>
+    <div class="developer" >
+        Website for Developers
+    </div>
+    </div>
+    <form class="searchbar">
+            <input type="search" placeholder="search here" id="search_box">
+            <button type="submit" id="search_btn"><img src="https://lh3.googleusercontent.com/fife/ALs6j_El3VjNcpodBQwX5kehDUCgn2J7J27pPshA0sPvuvnBuw8-XEaNNVT4cY1996Iv3YuqfmB-7MEQ1SnvcD2XEGvUQL3tIu3RglNCYE4DHM8HXFgNu9sbmO2suMuEMdRFlGRAL80kf16iyAO1dhqh8J5UT3ZDYPTLwr-xCbWsBof0utiXcDWlFXwGYZbcS-joPBS3kvmTrAJJpHqIViIIMbj-KnWDQ5pjcIlGll6wg2gxguLDfvjSPDkW_N_orKzSoypVxVXr54Ghgk42alh1ZllUjff_0_YyATeJE36-mtogWlNAIOFkjGhnZVjyPKT7LoBkmVWbEqbZzpDglp2J5-wfV-yO1HUrXz1TDZfkHQn_OxcG4T5QvSPKvjglPzXsy2RaxQJKq0ShJ3tklJ0KqY5NDwVj68JxyfFMz1qI1qpubumoRnQDQHvXv0t9NdN7KLpbkQdtn1KyxPngFEDMP1VDUhjawSrFsA3aopXYizMo7uthniu9yZAuiIKzOewufafYpJMmp_QZPK5GQ6c9o83IP5M8Dht8XyMiqaheZpzlgYPsmIXk2iKq7X-0K3r94gViz2l4vZ2C8Oe0-H4TZUAlsYHsFDbm1XqmUz7e53gePyP1fbRIno7XskC5l7jIgbHBRaCq_F9ktVhUIM50bK9vVH3fP4gHzeno7SJRPTRevRPnB59yJ5EonWvK5YrZ0kpDXV410mPmFy_b6nECDIHOGnLrrEw6rv_V7hjjOtkw1LRACu0a0y8fA-2vZOKSIdy1tjIVMVWyTW8VaLQknbGg537SGFe-FYf8Gi6iXwL2FeIvHopaPhSn0v79SlyCJ0zLf3EdaElhoepmN0a1patQpiTCe39qKgHGhoiHvreopIgR5oFeASAvlGJ_irTp2wiPYkZqtFMJNjlZw8ZyK4DGAOoGlLyI6mJfQMr7k_wCWovFmGmtZn1FGuWY7QH8iUoZFb8yc-Bi5nOuvdY0_4dwL1murVd7jq76nHkMVOeKaHc-lMv0Gx12rWb2726g_5VyPjz1-KqH5AEzYuE-mQL1cZgX1IUsjSib5HCUKNmOTwoUd6lloLZUcf45k51L9p_A2_KeSQNc2ETAKksjt7BTLobUMn6Suymyjsf8macT_YoyHOvVmoYRjzkmeGmWeW2dUbjgy-RZ-HI9yDXU9dDxOpBwTXB0FK1CYh8y9h7OsL-WkjGCWRmnvqJWJqge_sE0Ef9jderyc5nMJeW9M7ZtLKvkCun6MPe4ozPrlkMlfRpkiBQb242yr7TisCTHM3CV2qHP5cW8_oaqlgN8i6lcyHUxgTLb_Od7c4Gz1cinN25Gz_lqbet31ckiS0N4v3l3vQJDOh0KIK66LD5Be4xjVPfLXtifjhkVfkB3_0FPNZZHxwV9FtfCmgqeEKT62sx-iquma-ja-SufUmet9xuBuITwM2iV5auL8rp5vnBBb9gyygE98sZe6qndUcsOFBwqwOmc0-nOjcbCegBr6W0Fzam87y-9yYsTFmymEW8jjKQCDpumMggUE46YFS_4k05JFnnU2rEhuWqJOykKBjOsBq2PEfZOGncv3uMEdszr-PP3HkirockShXHq3LKmVNcr7UpBKYpNoTmFO46tDQ=w1097-h813" class="search_button" ></button>
+    </form>
+    <div class="shortcut_container">
+        
+    <span class="add" id="add">
+        <div class="shortcut">+</div>
+    </span>
+    </div>
+
+    <div id="all_shortcut_icons">
+
+    </div>
+
+    <div id="bg">
+        
+    </div>
+
+        <div id="add_link_box">
+            <h1 id="add_shortcut">Add Shortcuts</h1>
+            <form>
+                Name <br>
+                <input type="text" id="name"> <br>
+                URL <br>
+                <input type="url" id="url"><br>
+                <button id="add_btn" type="button">Add</button>
+            </form>
+        </div>
+        
+<script type="text/javascript">
+    var search_box = document.getElementById("search_box");
+var search_btn = document.getElementById("search_btn");
+
+search_btn.onclick = function(){
+	var search_result = "https://www.google.com/search?q="+search_box.value;
+	window.location.href = search_result;
+	return false;
+}
+
+function loadShortcuts() {
+    const shortcuts = JSON.parse(localStorage.getItem('shortcuts')) || [];
+    const allShortcutContainer = document.querySelector("#all_shortcut_icons");
+    
+    allShortcutContainer.innerHTML = '';
+    shortcuts.forEach(shortcut => {
+        const shortcutElement = document.createElement("div");
+        shortcutElement.innerHTML = `<a href="${shortcut.url}" target="_blank"><div class="shortcutName"><div class="shortcutFirstval">${shortcut.name[0]}</div><div class="shortcutValue">${shortcut.name}</div></div></a>`;
+        shortcutElement.className = 'shortcut1';
+        allShortcutContainer.appendChild(shortcutElement);
+    });
+}
+
+function saveShortcuts(shortcuts) {
+    localStorage.setItem('shortcuts', JSON.stringify(shortcuts));
+}
+
+function shortcut_btn() {
+    let add = document.querySelector("#add");
+    let bg = document.querySelector("#bg");
+    let add_link_box = document.querySelector("#add_link_box");
+    let add_btn = document.querySelector("#add_btn");
+    let shortcutName = document.querySelector("#name");
+    let shortcutUrl = document.querySelector("#url");
+    let allShortcutContainer = document.querySelector("#all_shortcut_icons");
+
+    loadShortcuts();
+
+    add.onclick = function() {
+        bg.style.display = "block";
+        add_link_box.style.display = "inline";
+        add_link_box.style.justifySelf = "center";
+        add_link_box.style.marginTop = "200px";
+    }
+
+    bg.onclick = function() {
+        bg.style.display = "none";
+        add_link_box.style.display = "none";
+    }
+	add_btn.onclick = () => {
+		const name = shortcutName.value.trim();
+		const url = shortcutUrl.value.trim();
+	
+		if (!name || !url) {
+			alert("Please fill in both fields.");
+			return;
+		}
+	
+		const newShortcut = { name: name, url: url };
+		
+		const shortcuts = JSON.parse(localStorage.getItem('shortcuts')) || [];
+		shortcuts.push(newShortcut);
+		saveShortcuts(shortcuts);
+		
+		loadShortcuts();
+		bg.style.display = "none";
+		add_link_box.style.display = "none";
+	
+		shortcutName.value = '';
+		shortcutUrl.value = '';
+	}
+	
+
+    allShortcutContainer.addEventListener('contextmenu', function(event) {
+        const shortcutElement = event.target.closest('.shortcut1');
+        if (shortcutElement) {
+            event.preventDefault();
+
+            shortcutElement.remove();
+
+            const shortcuts = JSON.parse(localStorage.getItem('shortcuts')) || [];
+            const updatedShortcuts = shortcuts.filter(shortcut1 => {
+                return shortcut1.name !== shortcutElement.querySelector('.shortcutValue').textContent;
+            });
+            saveShortcuts(updatedShortcuts);
+        }
+    });
+	
+}
+
+shortcut_btn();
+</script>
+</body>
+</html>
